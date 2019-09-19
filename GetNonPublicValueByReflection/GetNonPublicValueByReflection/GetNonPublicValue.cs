@@ -207,6 +207,10 @@ namespace GetNonPublicValueByReflection
 
         public static Type ToType(object obj, PropertyInfo x)
         {
+            if(x.GetValue(obj) == null)
+            {
+                return typeof(object);
+            }
             return x.GetValue(obj).GetType();
         }
 

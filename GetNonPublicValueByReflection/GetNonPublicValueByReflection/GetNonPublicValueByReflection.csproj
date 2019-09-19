@@ -10,9 +10,9 @@
     <PackageIconUrl>https://chiisen.github.io/image/github.io/cat-icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/chiisen/GetNonPublicValueByReflection</PackageProjectUrl>
     <PackageTags>Reflection</PackageTags>
-    <AssemblyVersion>1.0.0.36</AssemblyVersion>
-    <FileVersion>1.0.0.36</FileVersion>
-    <Version>1.0.36</Version>
+    <AssemblyVersion>1.0.0.38</AssemblyVersion>
+    <FileVersion>1.0.0.38</FileVersion>
+    <Version>1.0.38</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
