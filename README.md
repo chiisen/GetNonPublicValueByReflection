@@ -13,7 +13,7 @@ public class NonPublicClass
     private string NonPublicField = "I'am Field";
     private string NonPublicProperty { get; set; } = "I'am Property";
 }
-``` C#
+```
 如果我們需要裡面的 NonPublicField 與 NonPublicProperty 的內容  
 可惜他們都是非公開的成員變數  
 這時候就可以利用這個工具來取得資訊內容，程式碼如下：
