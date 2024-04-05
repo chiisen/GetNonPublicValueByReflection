@@ -5,25 +5,42 @@
 
 讓我們以一個例子來說明，假設我們有一個物件，其內容如下：
 ``` C#
-public class NonPublicClass
-{
-    private string NonPublicField = "I'am Field";
-    private string NonPublicProperty { get; set; } = "I'am Property";
-}
+    public class NonPublicClass
+    {
+        private int NonPublicNumber1 = 1;
+        private int NonPublicNumber2 = 2;
+
+        private string NonPublicField1 = "I'am Field1";
+        private string NonPublicField2 = "I'am Field2";
+        private string NonPublicProperty1 { get; set; } = "I'am Property1";
+        private string NonPublicProperty2 { get; set; } = "I'am Property2";
+    }
 ```
 假如我們需要取得 NonPublicField 和 NonPublicProperty 的內容，
 但不幸的是，它們都是非公開的成員變數。
 在這種情況下，我們可以利用這個工具來獲取這些資訊，相關的程式碼如下所示：
 ``` C#
-NonPublicClass npc_ = new NonPublicClass();
+var npc_ = new NonPublicClass();
 
-string npf_ = GetNonPublicValue.GetFieldValue(npc_, "NonPublicField") as string;
-MSTestLog.WriteLine($"NonPublic Field Value: {npf_}");
+var fieldName_ = "NonPublicField1";
+string npf_ = GetNonPublicValue.GetFieldValue(npc_, fieldName_) as string;
+MSTestLog.WriteLine($"{fieldName_}: 【{npf_}】");
 
-string npp_ = GetNonPublicValue.GetPropertyValue(npc_, "NonPublicProperty") as string;
-MSTestLog.WriteLine($"NonPublic Property Value: {npp_}");
+var propertyName_ = "NonPublicProperty1";
+string npp_ = GetNonPublicValue.GetPropertyValue(npc_, propertyName_) as string;
+MSTestLog.WriteLine($"{propertyName_} Value: 【{npp_}】");
 ```
-只需幾行簡單的程式碼，就能輕鬆獲取非公開的內容。:smile:
+只需幾行簡單的程式碼，就能輕鬆獲取非公開的內容。😊
+
+- 測試結果如下圖所示:
+
+![UnitTest](./docs/NonPublicClassUnitTest.png)
+
+- 由於 GetNonPublicValueByReflection 專案為 .nupkg 專案，無法直接執行
+
+測試時，請用單元測試進行測試。
+
+![單元測試](./docs/UnitTestMenu.png)
 
 # git commit message
 - 常用描述
