@@ -1,12 +1,9 @@
 # Get NonPublic Value By Reflection   
-總是會有些情境上  
-你需要一些物件資訊的內容  
-偏偏這個物件的資訊內容不是公開的  
-這時候這個工具就派上用場了  
-只要一行程式碼  
-就能知道非公開的物件資訊內容是什麼了  
-舉個例子：
-假設有一個物件長相如下：
+在某些情境中，你可能需要取得某些物件的資訊，但這些資訊並非公開。
+這時，我們的工具就能派上用場。
+只需一行程式碼，就能取得這些非公開的物件資訊。
+
+讓我們以一個例子來說明，假設我們有一個物件，其內容如下：
 ``` C#
 public class NonPublicClass
 {
@@ -14,9 +11,9 @@ public class NonPublicClass
     private string NonPublicProperty { get; set; } = "I'am Property";
 }
 ```
-如果我們需要裡面的 NonPublicField 與 NonPublicProperty 的內容  
-可惜他們都是非公開的成員變數  
-這時候就可以利用這個工具來取得資訊內容，程式碼如下：
+假如我們需要取得 NonPublicField 和 NonPublicProperty 的內容，
+但不幸的是，它們都是非公開的成員變數。
+在這種情況下，我們可以利用這個工具來獲取這些資訊，相關的程式碼如下所示：
 ``` C#
 NonPublicClass npc_ = new NonPublicClass();
 
@@ -26,7 +23,7 @@ MSTestLog.WriteLine($"NonPublic Field Value: {npf_}");
 string npp_ = GetNonPublicValue.GetPropertyValue(npc_, "NonPublicProperty") as string;
 MSTestLog.WriteLine($"NonPublic Property Value: {npp_}");
 ```
-簡簡單單的幾行程式，輕鬆取到非公開的內容:smile:
+只需幾行簡單的程式碼，就能輕鬆獲取非公開的內容。:smile:
 
 # git commit message
 - 常用描述
