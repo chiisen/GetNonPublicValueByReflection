@@ -1,4 +1,6 @@
-# Get NonPublic Value By Reflection   
+# Get NonPublic Value By Reflection
+- 這是一個 .nupkg 專案，並不能直接運行。為了驗證其功能，我們還附上了一個單元測試專案供您進行測試。
+
 在某些情境中，你可能需要取得某些物件的資訊，但這些資訊並非公開。
 這時，我們的工具就能派上用場。
 只需一行程式碼，就能取得這些非公開的物件資訊。
