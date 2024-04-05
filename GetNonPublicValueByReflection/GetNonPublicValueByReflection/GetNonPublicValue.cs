@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
 
 namespace GetNonPublicValueByReflection
 {
@@ -21,8 +21,16 @@ namespace GetNonPublicValueByReflection
         {
             var type_ = obj.GetType();
             var pi_ = type_.GetProperty(name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-            var value_ = pi_.GetValue(obj);
-            return value_;
+            if (pi_ != null)
+            {
+                var value_ = pi_.GetValue(obj);
+                return value_;
+            }
+            else
+            {
+                // 處理找不到欄位的情況
+                return null;
+            };
         }
 
         /// <summary>
@@ -36,8 +44,16 @@ namespace GetNonPublicValueByReflection
         {
             var type_ = obj.GetType();
             var fi_ = type_.GetField(field, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-            var value_ = fi_.GetValue(obj);
-            return value_;
+            if (fi_ != null)
+            {
+                var value_ = fi_.GetValue(obj);
+                return value_;
+            }
+            else
+            {
+                // 處理找不到欄位的情況
+                return null;
+            };
         }
 
 

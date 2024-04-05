@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Authors>Sam</Authors>
     <Company>My Company</Company>
     <Product>Get NonPublic Value By Reflection</Product>
