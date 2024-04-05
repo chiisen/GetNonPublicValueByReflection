@@ -21,11 +21,11 @@ namespace UnitTestProject
 
             var fieldName_ = "NonPublicField1";
             string npf_ = GetNonPublicValue.GetFieldValue(npc_, fieldName_) as string;
-            MSTestLog.WriteLine($"{fieldName_}: °i{npf_}°j");
+            MSTestLog.WriteLine($"{fieldName_}: „Äê{npf_}„Äë");
 
             var propertyName_ = "NonPublicProperty1";
             string npp_ = GetNonPublicValue.GetPropertyValue(npc_, propertyName_) as string;
-            MSTestLog.WriteLine($"{propertyName_} Value: °i{npp_}°j");
+            MSTestLog.WriteLine($"{propertyName_} Value: „Äê{npp_}„Äë");
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace UnitTestProject
             List<NonPublic> fs_ = GetNonPublicValue.GetNonPublicFields(npc_);
             fs_.ForEach( x =>
             {
-                MSTestLog.WriteLine($"Fields: name°i {x.npName} °j type°i {x.npType.Name} °j value°i {x.npObject.ToString()}°j");
+                MSTestLog.WriteLine($"Fields: name„Äê {x.npName} „Äë type„Äê {x.npType.Name} „Äë value„Äê {x.npObject}„Äë");
             });
         }
 
@@ -46,7 +46,7 @@ namespace UnitTestProject
             List<NonPublic> pi_ = GetNonPublicValue.GetNonPublicPropertys(npc_);
             pi_.ForEach(x =>
             {
-                MSTestLog.WriteLine($"Propertys: name°i {x.npName}] type°i {x.npType.Name}°j value°i {x.npObject.ToString()}°j");
+                MSTestLog.WriteLine($"Propertys: name„Äê {x.npName}] type„Äê {x.npType.Name}„Äë value„Äê {x.npObject}„Äë");
             });
         }
     }
